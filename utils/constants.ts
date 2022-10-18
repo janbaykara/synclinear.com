@@ -1,19 +1,19 @@
 export const LINEAR = {
-    OAUTH_ID: process.env.LINEAR_OAUTH_ID,
+    OAUTH_ID: process.env.LINEAR_OAUTH_ID || "de24196afa78e6f3f99875b753a3ae29",
     OAUTH_URL: "https://linear.app/oauth/authorize",
     TOKEN_URL: "https://api.linear.app/oauth/token",
     SCOPES: ["write"],
     NEW_TOKEN_URL: "https://linear.app/settings/api",
     TOKEN_SECTION_HEADER: "Personal API keys",
     GRAPHQL_ENDPOINT: "https://api.linear.app/graphql",
-    IP_ORIGINS: ["35.231.147.226", "35.243.134.228"],
+    IP_ORIGINS: process.env.LINEAR_IP_ORIGINS ? process.env.LINEAR_IP_ORIGINS.split(",") : ["35.231.147.226", "35.243.134.228"],
     STORAGE_KEY: "linear-context",
     APP_URL: "https://linear.app",
     GITHUB_LABEL: "linear"
 };
 
 export const GITHUB = {
-    OAUTH_ID: process.env.GITHUB_OAUTH_ID,
+    OAUTH_ID: process.env.GITHUB_OAUTH_ID || "487937ed57e1d5ffea0d",
     OAUTH_URL: "https://github.com/login/oauth/authorize",
     TOKEN_URL: "https://github.com/login/oauth/access_token",
     SCOPES: ["repo", "write:repo_hook", "read:user", "user:email"],
@@ -36,7 +36,7 @@ export const TIMEOUTS = {
 
 export const GENERAL = {
     APP_NAME: "Linear-GitHub Sync",
-    APP_URL: "https://synclinear.com",
+    APP_URL: process.env.APP_URL || "https://synclinear.com",
     CONTRIBUTE_URL: "https://github.com/calcom/linear-to-github"
 };
 
